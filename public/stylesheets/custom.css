@@ -43,14 +43,12 @@
 	text-align: left;
 	white-space: normal;
 	background-color: #ffffff;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
-	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
@@ -119,18 +117,12 @@
 
 .newBean {
 	margin-right: auto;
-	margin-left:auto;
+	margin-left:150px;
 	width:400px;
 	padding: 2px 14px;
 
-	font-size: 14px;
 	font-weight: normal;
 	line-height: 18px;
-	background-color: #f7f7f7;
-	border-bottom: 1px solid #ebebeb;
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
-	border-radius: 5px 5px 0 0;
 }
 
 .newBean label {
@@ -148,15 +140,13 @@
 	margin-top:0px;
 	margin-left: 10px;
 	color:#444;
-	background-color: #ffe;
+	background-color: #fff;
 	border: 1px solid #ccc;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
-	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
@@ -170,16 +160,13 @@
 	margin-top:0px;
 	margin-left: 10px;
 	color:#444;
-	background-color: #ffe;
+	background-color: #fff;
 	border: 1px solid #ccc;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
-	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-webkit-background-clip: padding-box;
+
 	-moz-background-clip: padding;
 	background-clip: padding-box;	
 }
@@ -233,8 +220,22 @@
 	background-clip: padding-box;
 }
 
+.banner {
+		padding:3px;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
 .beanDesc {
-	margin-top: 20px;
+	margin-top: 0px;
 	text-align: justify;
 	margin-right: 20px;
 }
@@ -254,25 +255,16 @@
 	margin-left:auto;
 	margin-right: auto;
 	width:660px;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding;
-	background-clip: padding-box;
+	
 }
 
 .comment {
 	padding:3px;
-	
-	
-	background: #f7f7f7;
 }
 
+.comment input {
+	width: 300px;
+}
 .comment p {
 	margin-top:10px;
 	font-size: 13px;

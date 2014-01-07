@@ -1,8 +1,27 @@
 development:
-    adapter:  mysql
+    adapter: postgresql
     encoding: utf8
-    database: ajax
-    username: root
-    password: qwerty
-    host: 127.0.0.1
-    port: 3306
+    database: d2nuo6kcm9hmi
+    username: vqcesniuhugvkz
+    password: cGt3qcB0em3QT2jG2C2EEmnb3h
+    host: ec2-54-197-241-96.compute-1.amazonaws.com
+    port: 5432
+
+test:
+    adapter: postgresql
+    encoding: utf8
+    database: d2nuo6kcm9hmi
+    username: vqcesniuhugvkz
+    password: cGt3qcB0em3QT2jG2C2EEmnb3h
+    host: ec2-54-197-241-96.compute-1.amazonaws.com
+    port: 5432
+
+production:
+    adapter: postgresql
+    encoding: utf8
+    database: d2nuo6kcm9hmi
+    username: vqcesniuhugvkz
+    password: cGt3qcB0em3QT2jG2C2EEmnb3h
+    host: ec2-54-197-241-96.compute-1.amazonaws.com
+    port: 5432
+

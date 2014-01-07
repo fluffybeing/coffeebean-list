@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <name>Rails Knockout Example: Rahul</name>
+    <title>Coffe Me Crazy</title>
     <link href="/stylesheets/scaffold.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="/stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/bootstrap3.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="/stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/custom1.css" media="screen" rel="stylesheet" type="text/css" />
     <script src="/javascripts/jquery.js" type="text/javascript"></script>
     <script src="/javascripts/jquery1.tmpl.js" type="text/javascript"></script>
     <script src="/javascripts/knockout-3.0.0.js" type="text/javascript"></script>
@@ -12,97 +14,113 @@
 
 
   </head>
-  <body style="background:#eee;">
-    <div class="mainContainer well">
-      <div class="header">
-        <h1 > CoffeeMeCrazy </h1>
-      </div>
-      <!-- /// 1 -->
-      <script id="errorsTemplate" type="text/html">
-              
-               <span style="color:#ee5f5b;" data-bind="text: $data"></span>.&nbsp;
-            
-      </script>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#home">Coffeebeans Cartel</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="https://github.com/rahulrrixe">github</a></li>
+            <li><a href="https://in.linkedin.com/in/rahulrrixe‎">LinkedIn</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3" style="border-right:1px solid #ccc;">
+          <p class="lead">Crazy Coffee Beans</p>
+          <div class="list-group">
+           <br/>
+            <div class="col-sm-4 col-lg-4 col-md-4 hold">
+              <div class="thumbnail">
+                
+                <div class="caption">
+                  
+                  <input type="text" data-bind="value: tempName" placeholder="Bean Name"/>
+                  <textarea  data-bind="value: tempDescription" placeholder="Write Description about the bean.."></textarea>
+                  <input  placeholder="Location" type="text" data-bind="value: tempPlace" />
+                  <button class="btn btn-success span3" style="margin-left:2px;" data-bind="click: function() { viewModel.addBean() } ">Add bean</button>
+                </div>
+              </div>
+            </div>
+
+            <input style="width:250px; height:30px; margin-bottom:10px; margin-left:15px" type="text" class="search-query" data-bind="value :filter, valueUpdate: 'afterkeydown'" placeholder="Search Beans"/>     
+          </div>
+        </div>
+
+        <div class="col-md-9" >
+
+          <!-- /// 1 --> 
+          <script id="errorsTemplate" type="text/html">
+              <span style="color:#ee5f5b;" data-bind="text: $data"></span>.&nbsp;
+          </script>
       
-      <script id="commentsTemplate" type="text/html">
-        <div class="comment">
-        <img src="images/commentIcon.jpg" style="float:left; width:20px; height:20px;" />
-        <p data-bind="text: content"/></p>
-        <hr style="border-bottom:1px solid #ccc;"/>
-        </div>
-    
-    </script>
-      <!-- /// 2 -->
-      <script id="indexTemplate" type="text/html">
+          <script id="commentsTemplate" type="text/html">
+          <tr>
+            <td style="background-color:#eee;">
+              <img src="images/commentIcon.jpg" style="float:left; width:20px; height:20px; margin-right:10px;" />
+              <p data-bind="text: content"/></p>
         
-         <a >
-         <div class="span3 beanHolder" >
-           <div class="beanTitle" >
-              <img src="images/delete.jpg" style="width:12px; height:12px; float:right; margin-top:10px" data-bind="click: function() { viewModel.destroyAction($data) }" />
-               <h4 data-bind="text: name"> </h4>
-
-              
-            </div>
-            <div class="beanTries" data-bind="click: function() { viewModel.showAction($data) }">
-              <div class="row">
-                <div class="span1"><h3 data-bind="text: likes" ></h3></div>
-                <div class="span2 tried"><h4>Tried This</h4></div>
+            </td>
+          </tr>
+          </script>
+          <!-- /// 2 -->
+          <script id="indexTemplate" type="text/html">
+            <div class="col-sm-4 col-lg-4 col-md-4 hold" >
+              <div class="thumbnail">
+                <img src="images/delete.jpg" data-bind="click: function() { viewModel.destroyAction($data)}" style="float:right; width:20px; height:20px;"  />
+                <img data-bind="click: function() { viewModel.showAction($data) }" src="/images/coffeebean.jpg" style="height:70px;"  alt="" />
+                <div class="caption" data-bind="click: function() { viewModel.showAction($data) }">
+                  <h4 class="pull-right"></h4>
+                  <h4 data-bind="text: name"><a href="#"> </a></h4>
+                  <p data-bind="text: description"></p>
+                </div>
+                <div class="ratings"> 
+                  <p class="pull-right"  ><span data-bind="text:likes"></span> Likes</p>
+                  <p><img src="images/location.jpg" style="width:30px; height:30px;" /><span data-bind="text: place"></span></p>
+                </div>
               </div>
             </div>
-            <div class="beanLocation" data-bind="click: function() { viewModel.showAction($data) }">
-              <div class="row">
-                <div class="span1"> <img class="imgSmall" src="images/location.jpg" /></div>
-                <div class="span2 loc"><h4 data-bind="text: place"></h4></div>
-              </div>
-            </div>
-        </div>
-        </a>
-        
-      </script>
+          </script>
 
-      <!-- /// 5 -->
-      <script id="showTemplate" type="text/html">
-        <div class="beanShow"  >
-          <img src="images/back.png" data-bind="click: function() { viewModel.indexAction() }" />
-          <div style="margin-bottom:10px;" class="row" >
-            <div class="imgHolder span3" >
-              <img class="imgMedium" src="images/coffeebg.jpg" />
-            </div>
-            <div class="beanDesc span5" >
-                <div data-bind="click: function() { viewModel.editAction($data) }" name="Click to Edit">
-                  <h2><span data-bind="text: name"></span></h2>
-                  <p><span data-bind="text: description"></span></p>
-                  <div class="">
-                    <div class="row">
-                        <div class="row span3">
-                          <div class="span1"> <img class="imgSmall" src="images/location.jpg" /></div>
-                          <div class="span2 loc"><h4 data-bind="text: place"></h4></div>
-                        </div>
-                        <div class="span2" style="margin-top:10px;">
-                          <b><span class="tries" data-bind="text: likes"></span> </b><span>Tried This</span>
-                        </div>
-                    </div>
+          <!-- /// 5 -->
+          <script id="showTemplate" type="text/html">
+            <div class=""  >
+              <a data-bind="click: function() { viewModel.indexAction() }" >Go Back</a>
+              <div style="margin-bottom:10px;" class="row" >
+                <div class="span8" >
+                  <div  name="Click to Edit">
+                    <h3 ><img src="images/edit.jpeg" class="imgSmall" data-bind="click: function() { viewModel.editAction($data) }"/><span data-bind="text: name" ></span> (<span data-bind="text: likes"></span>) &nbsp; <button class="btn btn-warning" style="float:right; margin-right:30px; " data-bind="click: function() { viewModel.editAction($data) }">Edit</button>
+                    <button style="float:right; margin-right:10px;" class="btn btn-info" data-bind="click: function() { viewModel.tryAction($data) }"> Try this </button>   </h3>
                   </div>
                 </div>
-               <button class="btn btn-info" data-bind="click: function() { viewModel.tryAction($data) }">I Have Tried </button>
-              
-            </div>
-          
-          </div>
+              </div>
       
-            <div class="commentHolder span8">
-              <div class="comment">
-                <form id="form">
-                  <div>
-                    
-                      <input type="text" id="comment_content" data-bind="value: viewModel.newcontent"  placeholder="Write Your Comment"/>
+              <div class="commentHolder span8">
+                <div class="comment">
+                    <form id="form">
+                      <input type="text" id="comment_content" data-bind="value: viewModel.newcontent"  placeholder="Write Your Comment" style="height:40px; margin-left:0px"/>
                     </form>
-                     <button class="btn btn-success" data-bind="click: function() { viewModel.addComment() }"> Add comment </button>
-                  </div>
+                        <button class="btn btn-success" data-bind="click: function() { viewModel.addComment() }"> Add comment </button>
+                </div>
               </div>
             </div>  
-
-      </script>
+          </script>
 
       <!-- /// 7 -->
       <script id="editTemplate" type="text/html">
@@ -127,9 +145,9 @@
           
 
           <div>
-            <button class="btn btn-info" data-bind="click: function() { viewModel.updateAction($data) }">Update
+            <button class="btn btn-success" data-bind="click: function() { viewModel.updateAction($data) }">Update
             </button>
-            <a data-bind="click: function() { viewModel.showAction($item.selectedItem()) }"><button class="btn" >Cancel</button></a>
+            <button class="btn btn-default" data-bind="click: function() { viewModel.indexAction() }" >Cancel</button>
           </div>
         </div>
          
@@ -175,9 +193,21 @@
       </div>
       <!-- /// 11 -->
       <div data-bind='visible: currentPage() == "index"'>
-        <a data-bind='click: function() { viewModel.newAction() }'><button style="margin-top:20px;" class="btn btn-info"> Add Coffee Bean</button></a>
-        <input style="float:right; margin-top:20px;" type="text" class="search" data-bind="value :filter, valueUpdate: 'afterkeydown'" placeholder="Type to Search"/>
-        <br />
+         <div class="row carousel-holder">
+
+            <div class="col-md-12">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                
+                <div class="carousel-inner">
+
+                  <div class="item active " >
+                    <img class="slide-image banner"  src="images/banner.jpg" style="height:200px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         
         <table>
           <div class="row">
@@ -191,7 +221,9 @@
       <!-- /// 12 -->
       <div data-bind='visible: currentPage() == "show"'>
         <div data-bind='template: {name: "showTemplate",  data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>
-         <div class="commentHolder" data-bind='template: {name: "commentsTemplate", foreach: comments}'></div>
+         
+         <table  class="table table-striped table-bordered" style="width: 591px;" data-bind='template: {name: "commentsTemplate", foreach: comments}'>
+         </table>
       </div>
        
       <!-- /// 13 -->
@@ -204,5 +236,22 @@
         <div data-bind='template: {name: "newTemplate", data: tempItem}'></div>
       </div>
     </div>  
+
+  </div>
+    <div class="container">
+        
+              <hr>
+        
+              <footer>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2013 -Created By<a href="http://twitter.com/rahulrrixe">@RahulRRixe</a></p>
+                  </div>
+                </div>
+              </footer>
+        
+    </div><!-- /.container -->
+
+
   </body>
 </html>

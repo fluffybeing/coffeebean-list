@@ -20,6 +20,10 @@ var viewModel = {
 
   filter: ko.observable(""),
 
+  tempName: ko.observable(),
+  tempDescription: ko.observable(),
+  tempPlace: ko.observable(),
+
   tempItem: {
     id: ko.observable(),
     name: ko.observable(),
@@ -35,6 +39,12 @@ var viewModel = {
     content: ""
   },
 
+  newBean: {
+    name: "",
+    description: "",
+    place: "",
+    likes: 0
+  },
   // /// 8
   setFlash: function(flash) {
     this.flash(flash);
@@ -83,6 +93,35 @@ var viewModel = {
     });
   },
 
+ addBean: function() {
+    this.newBean.name = this.tempName();
+    this.newBean.description = this.tempDescription();
+    this.newBean.place = this.tempPlace();
+    var json_data = ko.toJS(this.newBean);
+    
+    $.ajax({
+      type: 'POST',
+      url: '/coffeebeans.json',
+      data: {
+        // /// 17
+        coffeebean: json_data
+      },
+      dataType: "json",
+      success: function(createdItem) {
+        viewModel.errors([]);
+      
+        viewModel.items.push(viewModel.newBean);
+        viewModel.tempName('');
+        viewModel.tempDescription('');
+        viewModel.tempPlace('');
+
+      },
+      error: function(msg) {
+        viewModel.errors(JSON.parse(msg.responseText));
+      }
+    });
+    viewModel.indexAction();
+  },
 
   // /// 13
   showAction: function(itemToShow) {
@@ -130,7 +169,7 @@ var viewModel = {
       dataType: "json",
       success: function(createdItem) {
         viewModel.errors([]);
-        viewModel.setFlash('Comment successfully created.');
+        
         viewModel.comments.push(viewModel.newcomment);
         viewModel.newcontent('');
       },
@@ -178,7 +217,7 @@ var viewModel = {
       dataType: "json",
       success: function(updatedItem) {
         viewModel.errors([]);
-        viewModel.setFlash('Coffee successfully tried');
+      
         viewModel.showAction(updatedItem);
         this.temp(1);
       },
