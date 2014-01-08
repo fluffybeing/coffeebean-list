@@ -1,27 +1,9 @@
 development:
-    adapter: postgresql
+    adapter: mysql
     encoding: utf8
-    database: d8jroufpneiaou
-    username: idissyrfynmury
-    password: u9OXrUcRVzaRc629xjXeLtC80l
-    host: ec2-54-197-241-96.compute-1.amazonaws.com
-    port: 5432
-
-test:
-    adapter: postgresql
-    encoding: utf8
-    database: d8jroufpneiaou
-    username: idissyrfynmury
-    password: u9OXrUcRVzaRc629xjXeLtC80l
-    host: ec2-54-197-241-96.compute-1.amazonaws.com
-    port: 5432
-
-production:
-    adapter: postgresql
-    encoding: utf8
-    database: d8jroufpneiaou
-    username: idissyrfynmury
-    password: u9OXrUcRVzaRc629xjXeLtC80l
-    host: ec2-54-197-241-96.compute-1.amazonaws.com
-    port: 5432
+    database: ajax
+    username: root
+    password: qwerty
+    host: 127.0.0.1
+    port: 3306
 

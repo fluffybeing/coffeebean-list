@@ -93,7 +93,7 @@ var viewModel = {
     });
   },
 
- addBean: function() {
+  addBean: function() {
     this.newBean.name = this.tempName();
     this.newBean.description = this.tempDescription();
     this.newBean.place = this.tempPlace();
