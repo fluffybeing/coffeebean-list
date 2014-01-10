@@ -10,7 +10,7 @@
     <script src="/javascripts/jquery.js" type="text/javascript"></script>
     <script src="/javascripts/jquery1.tmpl.js" type="text/javascript"></script>
     <script src="/javascripts/knockout-3.0.0.js" type="text/javascript"></script>
-    <script src="/javascripts/crud.js" type="text/javascript"></script>
+    <script src="/javascripts/coffeeknockout.js" type="text/javascript"></script>
 
 
   </head>
@@ -84,8 +84,8 @@
             <div class="col-sm-4 col-lg-4 col-md-4 hold" >
               <div class="thumbnail">
                 <img src="images/delete.jpg" data-bind="click: function() { viewModel.destroyAction($data)}" style="float:right; width:20px; height:20px;"  />
-                <img data-bind="click: function() { viewModel.showAction($data) }" src="/images/coffeebean.jpg" style="height:130px;"  alt="" />
-                <div class="caption" data-bind="click: function() { viewModel.showAction($data) }">
+                <img data-bind="click: function() { viewModel.ShowCoffeeAction($data) }" src="/images/coffeebean.jpg" style="height:130px;"  alt="" />
+                <div class="caption" data-bind="click: function() { viewModel.ShowCoffeeAction($data) }">
                   <h4 class="pull-right"></h4>
                   <h4 data-bind="text: name"><a href="#"> </a></h4>
                   <p data-bind="text: description"></p>
@@ -105,8 +105,8 @@
               <div style="margin-bottom:10px;" class="row" >
                 <div class="span8" >
                   <div  name="Click to Edit">
-                    <h3 ><img src="images/edit.jpeg" class="imgSmall" data-bind="click: function() { viewModel.editAction($data) }"/><span data-bind="text: name" ></span> (<span data-bind="text: likes"></span>) &nbsp; <button class="btn btn-warning" style="float:right; margin-right:30px; " data-bind="click: function() { viewModel.editAction($data) }">Edit</button>
-                    <button style="float:right; margin-right:10px;" class="btn btn-info" data-bind="click: function() { viewModel.tryAction($data) }"> Try this </button>   </h3>
+                    <h3 ><img src="images/edit.jpeg" class="imgSmall" data-bind="click: function() { viewModel.editCoffeeAction($data) }"/><span data-bind="text: name" ></span> (<span data-bind="text: likes"></span>) &nbsp; <button class="btn btn-warning" style="float:right; margin-right:30px; " data-bind="click: function() { viewModel.editCoffeeAction($data) }">Edit</button>
+                    <button style="float:right; margin-right:10px;" class="btn btn-info" data-bind="click: function() { viewModel.tryCoffeeAction($data) }"> Try this </button>   </h3>
                   </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@
                     <form id="form">
                       <input type="text" id="comment_content" data-bind="value: viewModel.newcontent"  placeholder="Write Your Comment" style="height:40px; margin-left:0px"/>
                     </form>
-                        <button class="btn btn-success" data-bind="click: function() { viewModel.addComment() }"> Add comment </button>
+                        <button class="btn btn-success" data-bind="click: function() { viewModel.addCoffeebeanComment() }"> Add comment </button>
                 </div>
               </div>
             </div>  
@@ -176,7 +176,7 @@
           
 
           <div>
-            <button class="btn btn-info" data-bind="click: function() { viewModel.createAction($data) }">Create
+            <button class="btn btn-info" data-bind="click: function() { viewModel.createCoffeeAction($data) }">Create
             </button>
             <a data-bind="click: function() { viewModel.indexAction() }"><button class="btn" >Cancel</button></a>
           </div>
@@ -201,7 +201,7 @@
                 <div class="carousel-inner">
 
                   <div class="item active " >
-                    <img class="slide-image banner"  src="images/banner.jpg" style="height:400px;">
+                    <img class="slide-image banner"  src="images/bluebean.jpg" style="height:400px;">
                   </div>
                 </div>
               </div>
@@ -220,7 +220,7 @@
 
       <!-- /// 12 -->
       <div data-bind='visible: currentPage() == "show"'>
-        <div data-bind='template: {name: "showTemplate",  data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>
+        <div data-bind='template: {name: "showTemplate",  data: tmpCoffeebean, templateOptions: { selectedItem: selectedItem}}'></div>
          
          <table  class="table table-striped table-bordered" style="width: 591px;" data-bind='template: {name: "commentsTemplate", foreach: comments}'>
          </table>
@@ -228,12 +228,12 @@
        
       <!-- /// 13 -->
       <div data-bind='visible: currentPage() == "edit"'>
-        <div data-bind='template: {name: "editTemplate", data: tempItem, templateOptions: { selectedItem: selectedItem}}'></div>
+        <div data-bind='template: {name: "editTemplate", data: tmpCoffeebean, templateOptions: { selectedItem: selectedItem}}'></div>
       </div>
 
       <!-- /// 14 -->
       <div data-bind='visible: currentPage() == "new"'>
-        <div data-bind='template: {name: "newTemplate", data: tempItem}'></div>
+        <div data-bind='template: {name: "newTemplate", data: tmpCoffeebean}'></div>
       </div>
     </div>  
 

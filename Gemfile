@@ -7,8 +7,8 @@ gem 'rails', '3.0.9'
 
 #gem 'sqlite3'
 
-#gem 'mysql'
-gem 'pg'
+gem 'mysql'
+#gem 'pg'
 # Use unicorn as the web server
 # gem 'unicorn'
 
