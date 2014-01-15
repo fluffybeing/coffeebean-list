@@ -6,7 +6,7 @@ To run the file on your system follow the below step
 First of all check whether basic dependency is installed or not like ruby, rails, mysql(i am using)
 on your system.
 
-Then 
+Then <br/>
      <code> $ cd coffeebean_app </code> <br/>
      <code> $ bundle install </code> <br/>
      <code> $ bundle exec rake db:migrate </code> <br/>
