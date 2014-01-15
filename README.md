@@ -7,9 +7,9 @@ First of all check whether basic dependency is installed or not like ruby, rails
 on your system.
 
 Then 
-     <code> $ cd coffeebean_app </code>
-     <code> $ bundle install </code>
-     <code> $ bundle exec rake db:migrate </code>
-     <code> $ rails s </code>
+     <code> $ cd coffeebean_app </code> <br/>
+     <code> $ bundle install </code> <br/>
+     <code> $ bundle exec rake db:migrate </code> <br/>
+     <code> $ rails s </code> <br/>
      
 so now the coffeebean app would be running at http://localhost:3000
